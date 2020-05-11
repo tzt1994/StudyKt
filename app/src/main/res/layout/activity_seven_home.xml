@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".seven.SevenHomeActivity">
+
+    <EditText
+        android:id="@+id/etFileInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入要保存的数据"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存到文件"
+        app:layout_constraintTop_toBottomOf="@+id/etFileInput"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnRead"
+        app:layout_goneMarginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="从文件读取"
+        app:layout_constraintTop_toBottomOf="@+id/etFileInput"
+        app:layout_constraintLeft_toRightOf="@+id/btnSave"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_goneMarginTop="20dp"/>
+
+    <Button
+        android:id="@+id/btnSaveSp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="保存到sp"
+        app:layout_constraintTop_toBottomOf="@+id/btnSave"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnRead"
+        app:layout_goneMarginTop="30dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
