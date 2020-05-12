@@ -14,8 +14,7 @@
         android:textColor="#333333"
         android:textSize="14sp"
         tools:text="渐变"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"/>
+        android:padding="10dp"/>
 
     <FrameLayout
         android:id="@+id/shaderContentView"

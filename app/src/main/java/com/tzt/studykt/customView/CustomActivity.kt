@@ -12,10 +12,7 @@ import com.tzt.studykt.R
 import com.tzt.studykt.customView.bezier.BezierActivity
 import com.tzt.studykt.customView.canvasdraw.CanvasDrawActivity
 import com.tzt.studykt.customView.data.CustomModel
-import com.tzt.studykt.customView.paint.ui.ClipTransFormActivity
-import com.tzt.studykt.customView.paint.ui.EffectActivity
-import com.tzt.studykt.customView.paint.ui.PaintColorActivity
-import com.tzt.studykt.customView.paint.ui.TextActivity
+import com.tzt.studykt.customView.paint.ui.*
 import com.tzt.studykt.third.BaseActivity
 import kotlinx.android.synthetic.main.activity_custom.*
 
@@ -34,12 +31,13 @@ class CustomActivity: BaseActivity() {
         setContentView(R.layout.activity_custom)
 
         pageList.apply {
-            add(CustomModel("绘制基础", "canvas.DrawXXX() 方法演示", CanvasDrawActivity::class.java))
+            add(CustomModel("自定义View", "绘制基础canvas.DrawXXX()", CanvasDrawActivity::class.java))
+            add(CustomModel("Paint", "Paint中对颜色的处理\n(基本颜色，ColorFilter，Xfermode)", PaintColorActivity::class.java))
+            add(CustomModel("Paint", "Paint中效果详解", EffectActivity::class.java))
+            add(CustomModel("Paint", "Paint中绘制文字的详解", TextActivity::class.java))
+            add(CustomModel("自定义View", "Clip(裁剪), 几何变换详解", ClipTransFormActivity::class.java))
+            add(CustomModel("自定义View", "绘制顺序", DrawOrderActivity::class.java))
             add(CustomModel("贝塞尔曲线", "贝塞尔曲线的详解", BezierActivity::class.java))
-            add(CustomModel("paint", "Paint中对颜色的处理\n(基本颜色，ColorFilter，Xfermode)", PaintColorActivity::class.java))
-            add(CustomModel("paint", "Paint中效果详解", EffectActivity::class.java))
-            add(CustomModel("paint", "Paint中绘制文字的详解", TextActivity::class.java))
-            add(CustomModel("裁剪和几何变换", "Clip, 几何变换详解", ClipTransFormActivity::class.java))
         }
 
         recyclerCustomView.layoutManager = LinearLayoutManager(context).apply {
