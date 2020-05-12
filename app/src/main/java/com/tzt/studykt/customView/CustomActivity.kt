@@ -37,6 +37,7 @@ class CustomActivity: BaseActivity() {
             add(CustomModel("Paint", "Paint中绘制文字的详解", TextActivity::class.java))
             add(CustomModel("自定义View", "Clip(裁剪), 几何变换详解", ClipTransFormActivity::class.java))
             add(CustomModel("自定义View", "绘制顺序", DrawOrderActivity::class.java))
+            add(CustomModel("属性动画", "ObjectAnimator", AnimatorActivity::class.java))
             add(CustomModel("贝塞尔曲线", "贝塞尔曲线的详解", BezierActivity::class.java))
         }
 

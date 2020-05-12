@@ -91,6 +91,9 @@
             android:name=".customView.paint.ui.DrawOrderActivity"
             android:label="道: 绘制顺序" />
         <activity
+            android:name=".customView.paint.ui.AnimatorActivity"
+            android:label="属性动画1" />
+        <activity
             android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
