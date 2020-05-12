@@ -11,19 +11,20 @@ import kotlin.math.min
 
 
 /**
- * Description: 范围裁剪
+ * Description: canvas几何变换
  *
  * @author tangzhentao
  * @since 2020/5/6
  */
-class ClipView: View{
+class CanvasTransFormView: View{
     companion object {
-        const val CLIP_RECT = 1
-        const val CLIP_PATH = 2
-        const val CLIP_OUT_PATH = 3
+        const val TRANSLATE = 1
+        const val ROTATE = 2
+        const val SCALE = 3
+        const val SKEW = 4
     }
 
-    private var type = CLIP_RECT
+    private var type = TRANSLATE
 
     private var paint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
@@ -34,7 +35,7 @@ class ClipView: View{
         color = Color.BLACK
     }
 
-    constructor(context: Context, type: Int = CLIP_RECT): this(context, null) {
+    constructor(context: Context, type: Int = TRANSLATE): this(context, null) {
         this.type = type
     }
 
@@ -52,41 +53,39 @@ class ClipView: View{
         val srcRectf = RectF(width / 4f - size / 2, height / 2f - size / 2f, width / 4f +  size / 2, height / 2f + size / 2f)
         val dstRectf = RectF(width / 4f * 3 - size / 2, height / 2f - size / 2f, width / 4f * 3 +  size / 2, height / 2f + size / 2f)
         when(type) {
-            CLIP_RECT -> {
-                // 矩形裁剪
+            TRANSLATE -> {
+                // 平移
                 canvas?.drawBitmap(bitmap, null, srcRectf, null)
 
                 canvas?.save()
-                val clipRect = RectF()
-                clipRect.left = dstRectf.left + 20f
-                clipRect.top = dstRectf.top + 20f
-                clipRect.right = dstRectf.right - 20f
-                clipRect.bottom = dstRectf.top + dstRectf.height() / 2 + 20f
-                canvas?.clipRect(clipRect)
+                canvas?.translate(100f, 0f)
                 canvas?.drawBitmap(bitmap, null, dstRectf, null)
                 canvas?.restore()
             }
-            CLIP_PATH -> {
-                // 路径裁剪内
+            ROTATE -> {
+                // 旋转
                 canvas?.drawBitmap(bitmap, null, srcRectf, null)
 
                 canvas?.save()
-                val path = Path()
-                path.addCircle(width / 4f * 3, height / 2f , size / 3, Path.Direction.CCW)
-                canvas?.clipPath(path)
+                canvas?.rotate(70f, width / 4f * 3, height / 2f)
                 canvas?.drawBitmap(bitmap, null, dstRectf, null)
                 canvas?.restore()
             }
-            CLIP_OUT_PATH -> {
-                // 路径裁剪外
+            SCALE -> {
+                // 缩放
                 canvas?.drawBitmap(bitmap, null, srcRectf, null)
 
                 canvas?.save()
-                val path = Path()
-                path.addCircle(width / 4f * 3, height / 2f , size / 2, Path.Direction.CW)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    canvas?.clipOutPath(path)
-                }
+                canvas?.scale(0.5f, 0.3f, width / 4f * 3, height / 2f)
+                canvas?.drawBitmap(bitmap, null, dstRectf, null)
+                canvas?.restore()
+            }
+            SKEW -> {
+                // 错切
+                canvas?.drawBitmap(bitmap, null, srcRectf, null)
+
+                canvas?.save()
+                canvas?.skew(0.3f, 0f)
                 canvas?.drawBitmap(bitmap, null, dstRectf, null)
                 canvas?.restore()
             }

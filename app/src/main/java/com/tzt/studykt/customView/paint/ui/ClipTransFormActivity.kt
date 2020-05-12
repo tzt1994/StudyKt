@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.tzt.studykt.R
 import com.tzt.studykt.customView.data.PaintModel
 import com.tzt.studykt.customView.paint.fragment.cliptransform.ClipTransFormFragment
+import com.tzt.studykt.customView.paint.fragment.cliptransform.TransFormShowFragment
 import com.tzt.studykt.customView.paint.fragment.effect.PaintEffectFragment
 import com.tzt.studykt.customView.paint.fragment.effect.ShadowLayerFragment
 import com.tzt.studykt.customView.paint.fragment.text.PaintTextFragment
@@ -51,6 +52,7 @@ class ClipTransFormActivity: BaseActivity() {
             cameraTransFormBundle.putInt("clip_transform_type", ClipTransFormFragment.CAMERA_TRANSFORM)
             cameraTransFormFragment.arguments = cameraTransFormBundle
             add(PaintModel("Camera几何变换", cameraTransFormFragment))
+            add(PaintModel("效果展示", TransFormShowFragment()))
         }
 
         VpBezier.adapter = BezierAdapter(supportFragmentManager)
