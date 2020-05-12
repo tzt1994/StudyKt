@@ -8,6 +8,7 @@ import com.tzt.studykt.customView.data.PaintModel
 import com.tzt.studykt.customView.paint.fragment.color.ColorFragment
 import com.tzt.studykt.customView.paint.fragment.color.ColorMatrixFragment
 import com.tzt.studykt.customView.paint.fragment.color.PaintColorFragment
+import com.tzt.studykt.customView.paint.fragment.color.XfermodeFragment
 import com.tzt.studykt.third.BaseActivity
 import kotlinx.android.synthetic.main.activity_bezier.*
 
@@ -57,12 +58,7 @@ class PaintColorActivity: BaseActivity() {
             add(PaintModel(title = "ColorFilter", fragment = colorFilterFragment))
             add(PaintModel(title = "ColorMatrixColorFilter", fragment = ColorMatrixFragment()))
             // Xfermode
-            val xfermodelFragment =
-                PaintColorFragment()
-            val xfermodeBundle = Bundle()
-            xfermodeBundle.putInt("shader_type", PaintColorFragment.XFERMODEL)
-            xfermodelFragment.arguments = xfermodeBundle
-            add(PaintModel(title = "PorterDuffXfermode", fragment = xfermodelFragment))
+            add(PaintModel(title = "Xfermode", fragment = XfermodeFragment()))
         }
 
         VpBezier.adapter = BezierAdapter(supportFragmentManager)

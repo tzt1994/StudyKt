@@ -74,16 +74,16 @@
             android:label="贝塞尔曲线" />
         <activity
             android:name=".customView.paint.ui.PaintColorActivity"
-            android:label="画笔" />
+            android:label="颜色处理" />
         <activity
             android:name=".customView.paint.ui.ColorMatrixColorFilterActivity"
             android:label="颜色矩阵过滤器" />
         <activity
             android:name=".customView.paint.ui.EffectActivity"
-            android:label="效果" />
+            android:label="效果处理" />
         <activity
             android:name=".customView.paint.ui.TextActivity"
-            android:label="文字Text" />
+            android:label="文字绘制" />
         <activity
             android:name=".customView.paint.ui.ClipTransFormActivity"
             android:label="裁剪和几何变换" />

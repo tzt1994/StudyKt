@@ -35,7 +35,6 @@ class PaintColorFragment : BaseFragment() {
         const val SHADER_TYPE_BITMAP = 1
         const val SHADER_TYPE_COMPOSE = 2
         const val COLOR_FILTER = 3
-        const val XFERMODEL = 4
     }
 
     private val mList = ArrayList<PaintItemModel>()
@@ -413,127 +412,6 @@ class PaintColorFragment : BaseFragment() {
                             PorterDuffColorFilterView(
                                 mContext,
                                 PorterDuff.Mode.ADD
-                            )
-                        ))
-                    }
-                }
-                XFERMODEL -> {
-                    titleTv.text = "PorterDuffXfermode\n指的是你要绘制的内容和 Canvas 的目标位置的内容应该怎样结合计算出最终的颜色"
-                    mList.apply {
-                        add(PaintItemModel("唯一子类 PorterDuffXfermode\n构造函数\n" +
-                                "PorterDuffXfermode(model: PorterDuff.Mode)", null))
-                        add(PaintItemModel("PorterDuff.Mode.SRC",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.SRC
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.SRC",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.SRC
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.SRC_OVER",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.SRC_OVER
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.SRC_IN",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.SRC_IN
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.SRC_ATOP",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.SRC_ATOP
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.SRC_OUT",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.SRC_OUT
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.DST",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.DST
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.DST_OVER",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.DST_OVER
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.DST_IN",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.DST_IN
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.DST_ATOP",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.DST_ATOP
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.DST_OUT",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.DST_OUT
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.ADD",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.ADD
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.CLEAR",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.CLEAR
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.DARKEN",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.DARKEN
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.LIGHTEN",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.LIGHTEN
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.OVERLAY",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.OVERLAY
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.SCREEN",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.SCREEN
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.XOR",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.XOR
-                            )
-                        ))
-                        add(PaintItemModel("PorterDuff.Mode.MULTIPLY",
-                            PorterDuffXfermodeView(
-                                mContext,
-                                PorterDuff.Mode.MULTIPLY
                             )
                         ))
                     }
