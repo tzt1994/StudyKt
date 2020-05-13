@@ -94,6 +94,9 @@
             android:name=".customView.paint.ui.AnimatorActivity"
             android:label="属性动画1" />
         <activity
+            android:name=".customView.inaction.InActionActivity"
+            android:label="UI效果展示" />
+        <activity
             android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

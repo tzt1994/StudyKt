@@ -29,7 +29,6 @@ import kotlinx.android.synthetic.main.fragment_view_property.*
  * @since 2020/5/8
  */
 class ViewPropertyFragment: BaseFragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -43,14 +42,26 @@ class ViewPropertyFragment: BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         btnViewPro.setOnClickListener {
-            ivAnimator.animate()
-                .translationX(500f)
-                .translationY(500f)
-                .scaleX(1f)
-                .scaleY(1f)
-                .alpha(1f)
-                .rotation(360f)
-                .duration = 1000
+            ivAnimator.animate().apply {
+                translationXBy(500f)
+                translationYBy(500f)
+                scaleXBy(1f)
+                scaleYBy(1f)
+                alphaBy(0f)
+                rotationBy(360f)
+                duration = 1000
+                withEndAction {
+                    ivAnimator.animate().apply {
+                        translationXBy(-500f)
+                        translationYBy(-500f)
+                        scaleXBy(-1f)
+                        scaleYBy(-1f)
+                        alphaBy(1f)
+                        rotationBy(-360f)
+                        duration = 1000
+                    }
+                }
+            }
         }
     }
 }

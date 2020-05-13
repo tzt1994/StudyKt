@@ -5,9 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.tzt.studykt.R
 import com.tzt.studykt.customView.data.PaintModel
-import com.tzt.studykt.customView.paint.fragment.animator.DurationFragment
-import com.tzt.studykt.customView.paint.fragment.animator.InterpolatorFragment
-import com.tzt.studykt.customView.paint.fragment.animator.ViewPropertyFragment
+import com.tzt.studykt.customView.paint.fragment.animator.*
 import com.tzt.studykt.customView.paint.fragment.effect.PaintEffectFragment
 import com.tzt.studykt.customView.paint.fragment.effect.ShadowLayerFragment
 import com.tzt.studykt.customView.paint.fragment.text.PaintTextFragment
@@ -33,6 +31,8 @@ class AnimatorActivity: BaseActivity() {
             add(PaintModel("View.animate()", ViewPropertyFragment()))
             add(PaintModel("setDuration()", DurationFragment()))
             add(PaintModel("interpolator", InterpolatorFragment()))
+            add(PaintModel("typeEvaluator", TypeEvaluatorFragment()))
+            add(PaintModel("PropertyValuesHolders.ofKeyframe()", PropertyValuesHoldersFragment()))
         }
 
         VpBezier.adapter = BezierAdapter(supportFragmentManager)

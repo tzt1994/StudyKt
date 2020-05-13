@@ -39,6 +39,7 @@ class CustomActivity: BaseActivity() {
             add(CustomModel("自定义View", "绘制顺序", DrawOrderActivity::class.java))
             add(CustomModel("属性动画", "ObjectAnimator", AnimatorActivity::class.java))
             add(CustomModel("贝塞尔曲线", "贝塞尔曲线的详解", BezierActivity::class.java))
+            add(CustomModel("高级UI效果", "自定义view实现的效果展示", BezierActivity::class.java))
         }
 
         recyclerCustomView.layoutManager = LinearLayoutManager(context).apply {
