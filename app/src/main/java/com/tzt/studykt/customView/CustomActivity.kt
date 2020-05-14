@@ -12,6 +12,7 @@ import com.tzt.studykt.R
 import com.tzt.studykt.customView.bezier.BezierActivity
 import com.tzt.studykt.customView.canvasdraw.CanvasDrawActivity
 import com.tzt.studykt.customView.data.CustomModel
+import com.tzt.studykt.customView.inaction.InActionActivity
 import com.tzt.studykt.customView.paint.ui.*
 import com.tzt.studykt.third.BaseActivity
 import kotlinx.android.synthetic.main.activity_custom.*
@@ -39,7 +40,7 @@ class CustomActivity: BaseActivity() {
             add(CustomModel("自定义View", "绘制顺序", DrawOrderActivity::class.java))
             add(CustomModel("属性动画", "ObjectAnimator", AnimatorActivity::class.java))
             add(CustomModel("贝塞尔曲线", "贝塞尔曲线的详解", BezierActivity::class.java))
-            add(CustomModel("高级UI效果", "自定义view实现的效果展示", BezierActivity::class.java))
+            add(CustomModel("高级UI效果", "自定义view实现的效果展示", InActionActivity::class.java))
         }
 
         recyclerCustomView.layoutManager = LinearLayoutManager(context).apply {

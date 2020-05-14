@@ -97,6 +97,12 @@
             android:name=".customView.inaction.InActionActivity"
             android:label="UI效果展示" />
         <activity
+            android:name=".customView.inaction.ui.ScrapingCardXfermodeActivity"
+            android:label="刮刮卡(xfermode)" />
+        <activity
+            android:name=".customView.inaction.ui.HeartXfermodeActivity"
+            android:label="心跳(xfermode)" />
+        <activity
             android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
